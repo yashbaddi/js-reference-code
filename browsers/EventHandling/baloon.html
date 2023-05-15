@@ -1,0 +1,22 @@
+<p>🎈</p>
+
+<script>
+  // Your code here
+  const ballonPara=document.querySelector("p")
+  let value=10
+  window.addEventListener("keydown",ballonFunc)
+
+  function ballonFunc(event){
+    if(event.key=='ArrowUp'){
+        value+=10
+    }else if(event.key=='ArrowDown'){
+        value-=10
+    }
+    ballonPara.style.fontSize=value+"px"
+    event.preventDefault()
+    if(value>150){
+        ballonPara.textContent="💥"
+        window.removeEventListener("keydown",ballonFunc)
+    }
+  }
+</script>

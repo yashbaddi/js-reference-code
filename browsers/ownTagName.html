@@ -1,0 +1,25 @@
+<h1 id="the-heeader" something="hey-something">Heading with a <span>span</span> element.</h1>
+<p>A paragraph with <span>one</span>, <span>two</span>
+  spans.</p>
+
+<script>
+  function byTagName(node, tagName) {
+    // Your code here.
+    const arr=[];
+    for(let i=0;i<node.children.length;i++){
+    	if(node.children.item(i).nodeName===tagName.toUpperCase()){
+        	arr.push(node.children.item(i))
+        }
+        arr.push(...byTagName(node.children.item(i),tagName))
+    }
+    return arr;
+  }
+
+  console.log(byTagName(document.body, "h1").length);
+  // → 1
+  console.log(byTagName(document.body, "span").length);
+  // → 3
+  let para = document.querySelector("p");
+  console.log(byTagName(para, "span").length);
+  // → 2
+</script>

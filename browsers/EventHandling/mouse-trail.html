@@ -1,0 +1,23 @@
+<style>
+    .trail { /* className for the trail elements */
+      position: absolute;
+      height: 6px; width: 6px;
+      border-radius: 3px;
+      background: teal;
+    }
+    body {
+      height: 300px;
+    }
+  </style>
+  
+  <script>
+    // Your code here.
+    const trailElement=document.querySelector('.trail');
+    window.addEventListener("mousemove",event=>{
+        const trailPoint=document.createElement("div")
+        trailPoint.classList.add("trail")
+        trailPoint.style.top=event.clientY;
+        trailPoint.style.left=event.clientX;
+        document.body.append(trailPoint)
+    })
+  </script>
