@@ -10,6 +10,7 @@ app.get("/", (req, res) => {
 app.get("/users", (req, res) => {
   res.send("hey users");
 });
+
 app.use(bodyParser.text());
 app.post("/users", (req, res) => {
   const body = req.body;
