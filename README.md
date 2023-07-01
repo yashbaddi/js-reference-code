@@ -1,4 +1,5 @@
 # js-reference-code
 
-This is my personal javascript playgroud that i use it for testing
-using it for my future refrence.
+- This is my personal javascript playgroud
+- I use it for testing and for my personal concept clarification
+- And also for my future refrences.
