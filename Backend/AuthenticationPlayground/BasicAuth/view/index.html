@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <p>Username</p>
+        <input type="text" id="username">
+        <input type="password" id="password">
+        <button type="button" id="button">submit</button>
+    </div>
+</body>
+<script>
+
+    const button =document.getElementById("button")
+
+    button.addEventListener("click",()=>{
+    const username=document.getElementById("username").value
+    const password=document.getElementById("password").value
+    const authHeader=btoa("Basic "+username+":"+password)
+        fetch("localhost:9080",{
+        headers:{
+            Authorization:authHeader
+        }
+    })
+    })
+
+    
+</script>
+</html>
