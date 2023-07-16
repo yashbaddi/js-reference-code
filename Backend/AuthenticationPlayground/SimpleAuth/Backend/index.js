@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import cookieParser from "cookie-parser";
 
 const app = express();
@@ -15,6 +16,23 @@ const users = {};
 
 app.use(express.json());
 app.use(cookieParser());
+// app.use(
+//   cors({
+//     allowedHeaders: ["authorization", "Content-Type"], // you can change the headers
+//     exposedHeaders: ["authorization"], // you can change the headers
+//     origin: "*",
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     credentials: true,
+//     preflightContinue: false,
+//   })
+// );
+
+// app.use(
+//   cors({
+//     origin: ["http://localhost:4500", "http://localhost:8000"],
+//     credentials: true,
+//   })
+// );
 
 app.post("/signup", (req, res) => {
   users[req.body.username] = {
@@ -31,10 +49,10 @@ app.post("/login", (req, res) => {
       res.cookie("username", req.body.username);
       res.redirect("/");
     } else {
-      res.send("Incorrect Password");
+      res.status(401).json({ message: "Incorrect Password" });
     }
   } else {
-    res.send("Invalid User");
+    res.status(401).json({ message: "Invalid Username" });
   }
 });
 
