@@ -5,7 +5,7 @@ const crypto = require("crypto");
 const app = express();
 app.use(express.json());
 
-// Mock user data
+//  user data
 const users = [];
 
 // Secret key for signing and verifying JWTs
@@ -76,7 +76,7 @@ app.post("/login", (req, res) => {
 });
 
 // Protected route
-app.get("/protected", authenticateToken, (req, res) => {
+app.get("/data", authenticateToken, (req, res) => {
   res.json({ message: "Protected route accessed successfully" });
 });
 
