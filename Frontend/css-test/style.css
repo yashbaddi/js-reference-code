@@ -1,0 +1,23 @@
+.superbox{
+    display: grid;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+}
+
+.red{
+    background-color: red;
+    margin-bottom: 100px;
+}
+
+.blue{
+    background-color: blue;
+    margin-top: 100px;
+
+}
+
+.green{
+    background-color: green;
+}
