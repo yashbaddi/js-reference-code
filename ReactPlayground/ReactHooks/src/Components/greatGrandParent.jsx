@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { GrandParent } from "./grandParent";
-import { myContext } from "../Store/context";
+import { myContext } from "../Store/reducerAdded";
 
 export function GreatGrandParent() {
+  console.log("in context", useContext(myContext));
   const [data, setData] = useContext(myContext);
   setData(2);
   return (

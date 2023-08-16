@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { myContext } from "../Store/context";
+import { myContext } from "../Store/reducerAdded";
 
 export function Child3() {
   const [data, setData] = useContext(myContext);

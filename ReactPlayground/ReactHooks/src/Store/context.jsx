@@ -1,5 +1,4 @@
-import { Children, createContext, useState } from "react";
-const defaultValue = 0;
+import { createContext, useState } from "react";
 
 export const myContext = createContext();
 
