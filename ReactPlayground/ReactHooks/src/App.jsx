@@ -1,14 +1,13 @@
-import { useState } from "react";
-import { myContext } from "./Store/context.js";
+import { ContextComp } from "./Store/context.jsx";
 
 import "./App.css";
 import { GreatGrandParent } from "./Components/greatGrandParent";
 
 function App() {
   return (
-    <myContext.Provider value={5}>
+    <ContextComp>
       <GreatGrandParent />
-    </myContext.Provider>
+    </ContextComp>
   );
 }
 

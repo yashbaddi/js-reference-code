@@ -3,7 +3,8 @@ import { GrandParent } from "./grandParent";
 import { myContext } from "../Store/context";
 
 export function GreatGrandParent() {
-  const data = useContext(myContext);
+  const [data, setData] = useContext(myContext);
+  setData(2);
   return (
     <div>
       <span>
