@@ -1,4 +1,4 @@
-import { ContextComp } from "./Store/reducerAdded.jsx";
+import { ContextComp } from "./StoreComp/reducerAdded.jsx";
 
 import "./App.css";
 import { GreatGrandParent } from "./Components/greatGrandParent";
