@@ -1,5 +1,5 @@
 .superbox{
-    display: grid;
+    display: block;
 }
 
 .box{

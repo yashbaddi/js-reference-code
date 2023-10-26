@@ -1,0 +1,38 @@
+/* .main-container{
+    width: 600px;
+    height: 600px;
+} */
+
+.grid-container{
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-gap: 10px;
+    justify-content: center; */
+    text-align: center;
+
+
+
+}
+.grid-child {
+    border-style: solid;
+    background-color: lightgray; /* Adjust styling as needed */
+  padding: 20px; /* Adjust padding as needed */
+  text-align: center; 
+  display: inline-block;
+  overflow:scroll;
+  
+  white-space: nowrap;
+  width: 15rem;
+  height: 10rem;
+
+}
+
+/* .grid-container::before {
+    content: "";
+    grid-column: span 1;
+  }
+  
+  .grid-container::after {
+    content: "";
+    grid-column: span 1;
+  } */
