@@ -47,27 +47,43 @@ export default function MapComponent() {
   function MapController() {
     const map = useMap();
     console.log("map");
+
     useEffect(() => {
       console.log("mapRef", map);
       map.flyTo(location.coordinates, 18, {
         animate: true,
       });
     }, []);
-    L.Routing.control({
-      waypoints: [
-        L.latLng(location.coordinates[0], location.coordinates[1]),
-        L.latLng(12.9346245, 77.6138175),
-        L.latLng(12.9297681, 77.5861597),
-      ],
-      createMarker: function () {
-        return null;
-      },
-      routeWhileDragging: false,
-      show: false, // This prevents the instructions from being shown
-      lineOptions: {
-        styles: [{ color: "black", opacity: 0.6, weight: 4 }],
-      },
-    }).addTo(map);
+
+    useEffect(() => {
+      const route = L.Routing.control({
+        waypoints: [
+          L.latLng(location.coordinates[0], location.coordinates[1]),
+          L.latLng(12.9346245, 77.6138175),
+          L.latLng(12.9297681, 77.5861597),
+        ],
+        createMarker: function () {
+          return null;
+        },
+
+        routeWhileDragging: false,
+        show: false, // This prevents the instructions from being shown
+        lineOptions: {
+          styles: [{ color: "black", opacity: 0.6, weight: 4 }],
+        },
+      }).addTo(map);
+
+      return route.remove;
+    }, [location]);
+
+    // L.routing.control.
+    // if (location.isLoaded) {
+    //   route.setWaypoints([
+    //     L.latLng(location.coordinates[0], location.coordinates[1]),
+    //     L.latLng(12.9346245, 77.6138175),
+    //     L.latLng(12.9297681, 77.5861597),
+    //   ]);
+    // }
   }
   return (
     <>
