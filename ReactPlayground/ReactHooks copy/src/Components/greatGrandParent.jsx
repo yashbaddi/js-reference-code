@@ -1,11 +1,6 @@
-import { useContext } from "react";
 import { GrandParent } from "./grandParent";
-import { myContext } from "../StoreComp/reducerAdded";
 
 export function GreatGrandParent() {
-  console.log("in context", useContext(myContext));
-  const [data, setData] = useContext(myContext);
-  setData(2);
   console.log("Great Grand Parent rendered");
 
   return (
@@ -14,7 +9,6 @@ export function GreatGrandParent() {
         This is a great grand Parent
         <br />
       </span>
-      <span>The Value is {data}</span>
       <GrandParent />
     </div>
   );

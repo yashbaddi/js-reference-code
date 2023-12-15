@@ -1,13 +1,13 @@
-import { ContextComp } from "./StoreComp/reducerAdded.jsx";
+import { useReducerContext } from "./StoreComp/reducerAdded.jsx";
 
 import "./App.css";
 import { GreatGrandParent } from "./Components/greatGrandParent";
 
 function App() {
   return (
-    <ContextComp>
+    <useReducerContext>
       <GreatGrandParent />
-    </ContextComp>
+    </useReducerContext>
   );
 }
 
