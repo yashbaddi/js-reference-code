@@ -9,5 +9,10 @@ export default function Login() {
   function increment() {
     setCounter((count) => count + 1);
   }
-  return <div onClick={increment}>{counter}</div>;
+  return (
+    <div onClick={increment}>
+      <p>{counter}</p>
+      <h1>{paramee.hello}</h1>
+    </div>
+  );
 }
