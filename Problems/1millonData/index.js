@@ -32,20 +32,7 @@ function threeSum(nums) {
 // console.log(threeSum(nums));
 
 // Main function to progressively test with doubling input sizes
-function progressivelyTestThreeSum(filePath) {
-  const nums = readFileIntoArray(filePath); // Load all integers from the file
-  let dataSize = 5;
 
-  // Keep doubling the size until we reach the full array
-  while (dataSize <= nums.length) {
-    const subset = nums.slice(0, dataSize); // Take the first 'dataSize' elements
-    jsSort(subset); // Call the threeSum function
-    dataSize *= 3; // Double the input size for the next iteration
-  }
-}
-
-// Call the function with the path to the file
-progressivelyTestThreeSum("1Mints.txt");
 
 function insertionSort(nums) {
   console.time(`Three Sum Execution Time for ${nums.length} records`); // Start timing
