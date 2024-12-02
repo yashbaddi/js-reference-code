@@ -129,4 +129,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 Problems/1Mints.txt
-generalLibraries/.DS_Store
+*.DS_Store
