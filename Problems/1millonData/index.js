@@ -100,3 +100,5 @@ function jsSort(nums) {
   nums.sort();
   console.timeEnd(`Three Sum Execution Time for ${nums.length} records`); // End timing
 }
+
+jsSort()

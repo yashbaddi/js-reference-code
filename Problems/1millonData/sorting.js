@@ -32,13 +32,36 @@ function bottomUpMergeSortRecursive(arr) {
   let size = 1;
   arr;
 }
+function bottomUpMergeSort(arr) {
+  const arrVal=arr.map(v=>[v])
+  const n = arrVal.length;
+  const arrReduce=arrVal.reduce((acc, curr) => {
+    const leftArr = acc[0] || [];
+    const rightArr = acc[1] || [];
+    
+    return merge(leftArr, rightArr);
+  }
+  , []);
+  const mergedArr = merge(leftArr, rightArr);
+
+  for (let size = 1; size < n; size *= 2) {
+      // For each size, merge pairs of adjacent subarrays
+      for (let left = 0; left < n - size; left += 2 * size) {
+          // Find the mid and right boundaries of the subarrays to merge
+          let mid = left + size - 1;
+          let right = Math.min(left + 2 * size - 1, n - 1);
+
+          // Merge the two subarrays: arr[left...mid] and arr[mid+1...right]
+      }
+  }
+
+  return arr;
+}
 
 function mergePairs(arr, size) {}
 
 function merge(leftArr, rightArr) {
   const arr = [];
-  leftArr = arr.slice(left, mid + 1);
-  rightArr = arr.slice(mid + 1, right);
 
   let i = 0,
     j = 0,
