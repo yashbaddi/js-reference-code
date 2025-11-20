@@ -1,0 +1,1 @@
+export const example:string = 'This is an example package in a monorepo setup with Turborepo.';
